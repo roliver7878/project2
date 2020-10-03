@@ -1,38 +1,14 @@
-# This module is imported so that we can 
-# play the converted audio 
-import os 
-# Import the required module for text 
-# to speech conversion 
-from gtts import gTTS 
 import pycep_correios
 
-cepcodevalue = input("Digite a caraia do seu CEP: " )
-address = pycep_correios.get_address_from_cep(cepcodevalue)
+def find(addresscode):
+    completeaddress = pycep_correios.get_address_from_cep(addresscode)
+
+    print(completeaddress['logradouro'])
+    print(completeaddress['bairro'])
+    print(completeaddress['cidade'])
+    print(completeaddress['uf'])
+    print(completeaddress['cep'])
+
+    return completeaddress
 
 
-print(address['logradouro'])
-print(address['bairro'])
-print(address['cidade'])
-print(address['uf'])
-print(address['cep'])
-
-convert(address)
-
-
-def convert(address):
-    pass
-    # Language in which you want to convert 
-    language = 'pt'
-
-    # Passing the text and language to the engine, 
-    # here we have marked slow=False. Which tells 
-    # the module that the converted audio should 
-    # have a high speed 
-    myobj = gTTS(text=address['logradouro'], lang=language, slow=False) 
-
-    # Saving the converted audio in a mp3 file named 
-    # welcome 
-    myobj.save("address.mp3") 
-
-    # Playing the converted file 
-    os.system("mpg321 address.mp3") 

@@ -6,21 +6,27 @@ from gtts import gTTS
 # play the converted audio 
 import os 
 
-# The text that you want to convert to audio 
-mytext = 'Welcome to geeksforgeeks!'
+class ConvertToAudio:
 
-# Language in which you want to convert 
-language = 'pt'
-
-# Passing the text and language to the engine, 
-# here we have marked slow=False. Which tells 
-# the module that the converted audio should 
-# have a high speed 
-myobj = gTTS(text=mytext, lang=language, slow=False) 
-
-# Saving the converted audio in a mp3 file named 
-# welcome 
-myobj.save("address.mp3") 
-
-# Playing the converted file 
-os.system("address.mp3") 
+    # The text that you want to convert to audio 
+    adresscode = 'This is my address teste'
+    
+    # Language in which you want to convert 
+    language = 'pt'
+    
+    # parameterized constructor
+    def __init__(self, data):
+       self.adresscode = data
+        
+    # Passing the text and language to the engine, 
+    # here we have marked slow=False. Which tells 
+    # the module that the converted audio should 
+    # have a high speed 
+    myaudio = gTTS(text=adresscode, lang=language, slow=False) 
+    
+    # Saving the converted audio in a mp3 file named 
+    # welcome 
+    myaudio.save("address.mp3") 
+    
+    # Playing the converted file 
+    os.system("address.mp3") 
