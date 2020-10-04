@@ -29,7 +29,7 @@ Website:
   </tr>
   <tr>
     <td>
-        <img src="Docs/aboutme.png" width="600"/>
+        <img src="docs/baralho.jpg"/>
     </td>
     <td>
         <img src="Docs/aboutme-mobile.png" width="150" height="311"/>
